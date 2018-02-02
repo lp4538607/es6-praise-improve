@@ -1,0 +1,37 @@
+{% extends 'layout.html' %} {% block title %}作业二{% endblock %} {% block head %} {% parent %}
+<link rel="stylesheet" href="../css/index.css">
+{% endblock %} {% block content %}
+
+<div id="background">
+    <div id="praise" style="text-align: center; font-size: 120px; margin: 0px;opacity:0;transition:all 0.5s ease ; position: relative;top:40px">+1</div>
+    <div id="container">
+        <div id="arm"></div>
+        <div class="finger one"><div class="nail"><div id="shadow"></div></div></div>
+        <div class="finger two"><div class="nail"></div></div>
+        <div class="finger three"><div class="nail"></div></div>
+        <div class="finger four"><div class="nail"></div></div>
+        <div class="finger five"><div class="nail"></div></div>
+        <div id="cover"></div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../js/index.js"></script>
+<script src="https://cdn.bootcss.com/systemjs/0.20.19/system.js"></script>
+<script>
+    SystemJS.config({
+        baseURL: '/js'
+    })
+    SystemJS.import('praise.es.js').then(function(m) {
+        $.extend({
+            thumb: m.default.Thumb
+        })
+        callBack()
+    })
+    function callBack() {
+        let praise = new $.thumb(0, $('#container'));
+        praise.clickAction();
+    }
+</script>
+
+{% endblock %}
