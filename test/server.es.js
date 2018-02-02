@@ -8,7 +8,7 @@ var _app_o = require('../app.es.js');
 
 var _app_o2 = _interopRequireDefault(_app_o);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; } 
 
 //  先定义一个拿到端口的方法
 function request() {
