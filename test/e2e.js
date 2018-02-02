@@ -7,6 +7,6 @@ let driver = new Builder()
 driver.get('http://localhost:3000/index/index');
 driver.findElement(By.id('container')).click();
 
-const _animation = driver.findElement(By.id('animation'))
+const _animation = driver.findElement(By.id('praise'))
 driver.wait(_animation.isDisplayed(), 1000);
 driver.quit();
